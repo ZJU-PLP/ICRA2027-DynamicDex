@@ -65,6 +65,8 @@ Tactile images are optical marker/deformation visualizations and are not calibra
 
 ### Pan overhead-grasp repair
 
+<img src="assets/simulation/pan_overhead_repair.png" alt="Pan overhead-grasp repair contact replay" width="100%">
+
 The Pan replay is the verified overhead-handle repair: fixed wrist, finger-load feedback, approximately ±50 mm payload travel, 100% required-contact retention during the hold, 4.57 mm maximum relative translation, and 8.04° maximum rotation. It is a two-run engineering verification, not a learned-policy success-rate estimate.
 
 [Pan repair scope and metrics](data/simulation/pan_overhead_repair.md) · [Pan repair video](demos/pan_overhead_repair/pan_overhead_repair.mp4) · [Pan repair packet report](data/simulation/pan_overhead_repair_report.json)
