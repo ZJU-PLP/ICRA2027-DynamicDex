@@ -25,37 +25,27 @@ table{width:100%;max-width:850px;margin:18px auto;border-collapse:collapse;font-
 <h1>DynamicDex: Contact-Aware Dexterous Grasping under Hidden Load Shifts</h1>
 <div class="authors">Anonymous Authors</div>
 <div class="venue">ICRA 2027</div>
-<div class="links"><a href="paper/DynamicDex_ICRA2027_submission.pdf">Paper</a><a href="#video">Video demos</a><a href="#replays">Tactile replays</a><a href="#data">Data</a></div>
+<div class="links"><a href="paper/DynamicDex_ICRA2027_submission.pdf">Paper</a><a href="#simulation">Simulation</a><a href="#replays">Tactile replays</a><a href="#data">Data</a></div>
 </header>
 
 <img class="teaser" src="assets/paper/fig1_teaser.png" alt="Hidden payload changes the object CoM relative to a fixed grasp">
 
-<p class="abstract"><span class="label">Abstract.</span> Hidden mass redistribution changes the support required from a dexterous grasp even when object geometry and total mass remain unchanged. DynamicDex combines global wrist loading with local tactile history to generate bounded residuals around an established grasp. With a fixed wrist, moving-load pose success increases from 80% to 100% and mean squared normalized joint torque is approximately 40% lower than fixed-grasp control. Physical Basket grasps achieve 90% static-load and 80% moving-load success.</p>
-
-<section>
+<section class="abstract-section"><h2>Abstract</h2><p class="abstract">Hidden mass redistribution changes the support required from a dexterous grasp even when object geometry and total mass remain unchanged. DynamicDex combines global wrist loading with local tactile history to generate bounded residuals around an established grasp. With a fixed wrist, moving-load pose success increases from 80% to 100% and mean squared normalized joint torque is approximately 40% lower than fixed-grasp control. Physical Basket grasps achieve 90% static-load and 80% moving-load success. Contact continuity is reported separately from pose recovery.</p></section><section>
 <h2>Method Overview</h2>
 <p>DynamicDex encodes wrist wrench and gravity globally, combines four local tactile descriptors with proprioception and role signals, and processes an eight-frame causal history. The actor produces 16 joint residuals that are projected through reference, joint-limit, and rate bounds; privileged object state is used only by the training critic.</p>
 <img class="method-image" src="assets/paper/fig2_framework.png" alt="DynamicDex method overview">
-</section>
-
-<section id="video">
-<h2>Video Demos</h2>
+</section><section>
+<h2>Simulation Results</h2>
+<p>DynamicDex reaches 90/90 moving-load successes with a fixed wrist, compared with 72/90 for fixed-grasp control. The 18 additional successes all occur on Basket (30/30 versus 12/30). Admittance-wrist evaluation gives 84/90 successes for DynamicDex versus 75/90 for fixed grasp; Grip-4D also gives 84/90. Contact continuity remains a separate outcome from pose recovery.</p>
+<img class="result-image" src="assets/paper/fig3_simulation_grasps.png" alt="Simulation grasp configurations and tactile loads">\n<img class="result-image" src="assets/paper/fig4_measured_diagnostics.png" alt="CoM motion, finger loads, and contact retention during load redistribution">
+\n<h3>Demonstration videos</h3>
 <p>Four common-Home simulation recordings show approach, closure, payload motion, and hold. These presentation traces are separate from the formal 1,395-trial controller evaluation.</p>
 <div class="video-grid">
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/com_bar.webp"><source src="demos/simulation/com_bar.mp4" type="video/mp4"></video><div class="caption"><b>CoM-Bar</b> · <a href="demos/simulation/com_bar.mp4">MP4</a></div></div>
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/basket.webp"><source src="demos/simulation/basket.mp4" type="video/mp4"></video><div class="caption"><b>Basket</b> · <a href="demos/simulation/basket.mp4">MP4</a></div></div>
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/drill.webp"><source src="demos/simulation/drill.mp4" type="video/mp4"></video><div class="caption"><b>Drill</b> · <a href="demos/simulation/drill.mp4">MP4</a></div></div>
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/pan.webp"><source src="demos/simulation/pan.mp4" type="video/mp4"></video><div class="caption"><b>Pan</b> · <a href="demos/simulation/pan.mp4">MP4</a></div></div>
-</div>
-</section>
-
-<section>
-<h2>Simulation Results</h2>
-<p>DynamicDex reaches 90/90 moving-load successes with a fixed wrist, compared with 72/90 for fixed-grasp control. The 18 additional successes all occur on Basket (30/30 versus 12/30). Admittance-wrist evaluation gives 84/90 successes for DynamicDex versus 75/90 for fixed grasp; Grip-4D also gives 84/90. Contact continuity remains a separate outcome from pose recovery.</p>
-<img class="result-image" src="assets/paper/fig4_measured_diagnostics.png" alt="CoM motion, finger loads, and contact retention during load redistribution">
-</section>
-
-<section id="replays">
+</div>\n</section><section id="replays">
 <h2>Four-Case Tactile Replays</h2>
 <p>Each self-contained viewer provides a play button and time slider. RGB, four tactile panels, payload/CoM state, phase, and wrench values update packet by packet. Tactile images are optical marker/deformation overlays, not calibrated force maps.</p>
 <div class="replay-grid">
@@ -64,22 +54,16 @@ table{width:100%;max-width:850px;margin:18px auto;border-collapse:collapse;font-
 <div class="replay"><img src="assets/simulation/drill.webp" alt="Drill"><a href="demos/tactile_replays/drill.html">Drill replay</a><div class="note">static contact feedback</div></div>
 <div class="replay"><img src="assets/simulation/pan.webp" alt="Pan"><a href="demos/tactile_replays/pan.html">Pan replay</a><div class="note">fixed-wrist payload response</div></div>
 </div>
-</section>
-
-<section>
+</section><section>
 <h2>Real-World Results</h2>
 <p>Physical validation uses DynamicDex Full-16 with wrist admittance on Basket. Contact retention and peak rotation are means of trial-level metrics within each condition.</p>
 <table><tr><th>Condition</th><th>Success</th><th>Mean retention</th><th>Mean peak rotation</th></tr><tr><td>Static load (N=10)</td><td>9/10 (90%)</td><td>95.0%</td><td>4.2°</td></tr><tr><td>Moving load (N=5)</td><td>4/5 (80%)</td><td>85.0%</td><td>8.6°</td></tr></table>
 <img class="physical-image" src="assets/paper/fig6_basket_real.png" alt="Physical Basket tactile and wrist responses">
-</section>
-
-<section id="data">
+</section><section id="data">
 <h2>Paper and Data</h2>
 <div class="downloads"><a href="paper/DynamicDex_ICRA2027_submission.pdf">Paper PDF</a> · <a href="data/simulation/four_common_home_metrics.csv">Simulation metrics</a> · <a href="data/physical/basket_trial_aggregates.csv">Physical aggregate</a> · <a href="data/simulation/pan_overhead_repair.md">Pan non-PPO scope</a> · <a href="data/release_manifest.json">Release manifest</a></div>
 <p class="scope">The 15-trial physical aggregate and independent 10-second sensor captures are separate evidence sets. Individual logs for the aggregate were not supplied; the table reports author-confirmed group means.</p>
-</section>
-
-<div class="foot">Anonymous supplementary material · DynamicDex · ICRA 2027</div>
+</section><div class="foot">Anonymous supplementary material · DynamicDex · ICRA 2027</div>
 </main>
 </body>
 </html>
