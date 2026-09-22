@@ -2,42 +2,84 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="DynamicDex supplementary material for ICRA 2027.">
-<title>DynamicDex · ICRA 2027</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="DynamicDex: Contact-Aware Dexterous Grasping under Hidden Load Shifts">
+<title>DynamicDex: Contact-Aware Dexterous Grasping under Hidden Load Shifts</title>
 <style>
-:root{--ink:#17333b;--muted:#64777c;--teal:#087d82;--bg:#fbfaf7;--soft:#edf5f3;--line:#d9e7e6;--paper:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}a{color:#07646b;text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
-header{position:sticky;top:0;z-index:5;background:#fbfaf7ee;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}nav{height:64px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800}.links{display:flex;gap:18px;font-size:14px;color:var(--muted)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:74px 0 62px}.kicker{color:var(--teal);font-size:12px;letter-spacing:.15em;font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(39px,5.4vw,70px);line-height:1.02;letter-spacing:-.06em;margin:15px 0}.hero p,.lead{color:var(--muted);font-size:18px;max-width:760px}.hero img{width:100%;border-radius:20px;background:#e6f1ef;padding:14px}
-.btn{display:inline-block;padding:10px 16px;border-radius:999px;border:1px solid var(--teal);font-weight:750;font-size:14px;margin:10px 8px 0 0}.primary{background:var(--teal);color:#fff}.secondary{color:var(--teal);background:transparent}
-section{padding:64px 0}section.soft{background:var(--soft)}h2{font-size:clamp(28px,3.2vw,42px);letter-spacing:-.04em;line-height:1.1;margin:0 0 12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stat,.card,.download{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}.stat strong{display:block;color:var(--teal);font-size:30px;letter-spacing:-.04em}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
-.demos{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.card{padding:0;overflow:hidden}.card video{display:block;width:100%;aspect-ratio:4/3;background:#102a31}.card-body{padding:15px 17px 17px}.card h3{margin:0 0 3px;font-size:20px}.card p{margin:0 0 9px;color:var(--muted);font-size:14px}.small-links{display:flex;gap:13px;flex-wrap:wrap;font-weight:750;font-size:13px}
-.method{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.method img,.wide{width:100%;border-radius:14px;border:1px solid var(--line);background:#fff}.method ul{color:var(--muted);padding-left:21px}.replays{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.replay{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.replay img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}.replay div{padding:12px 14px}.replay h3{margin:0;font-size:17px}.replay p{color:var(--muted);font-size:13px;margin:2px 0 7px}
-.physical{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.physical img{width:100%;border-radius:14px;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:14px}th,td{text-align:left;padding:10px 11px;border-bottom:1px solid var(--line)}th{background:#e3f0ee;color:#075f68;font-size:13px}tr:last-child td{border:0}.downloads{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.download{display:block}.download b{display:block}.download span{color:var(--muted);font-size:13px}
-footer{padding:30px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-@media(max-width:820px){.hero,.method,.physical{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.replays{grid-template-columns:repeat(2,1fr)}.links{display:none}}@media(max-width:560px){.wrap{width:calc(100% - 26px)}.demos{grid-template-columns:1fr}.downloads{grid-template-columns:1fr}.hero{padding-top:45px}}
+:root{--ink:#20242a;--muted:#5b636c;--link:#1769aa;--rule:#e5e7eb;--bg:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}
+main{width:min(980px,calc(100% - 40px));margin:0 auto;padding:58px 0 80px}
+header{text-align:center}h1{font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.12;letter-spacing:-.035em;margin:0 auto 16px;max-width:920px}.authors{font-size:18px;margin:4px 0;color:#30343a}.venue{color:var(--muted);margin:2px 0 18px}.links{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;font-weight:600;margin-bottom:34px}a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+.teaser{width:100%;display:block;margin:0 auto 28px;border:1px solid var(--rule)}.abstract{font-size:17px;text-align:justify;max-width:900px;margin:0 auto 48px}.label{font-weight:700}
+section{margin:48px 0}h2{text-align:center;font-size:30px;line-height:1.2;margin:0 0 18px;font-weight:700}h3{text-align:center;font-size:21px;margin:26px 0 9px}p{margin:10px auto;max-width:900px}.method-image,.result-image,.physical-image{display:block;width:100%;border:1px solid var(--rule);margin:20px auto}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px 26px}.video-item video{display:block;width:100%;background:#102a31}.video-item .caption{text-align:center;color:var(--muted);font-size:14px;margin-top:7px}.video-item .caption a{margin-left:10px}
+.replay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.replay img{display:block;width:100%;border:1px solid var(--rule);margin-bottom:8px}.replay{text-align:center;font-size:14px}.replay .note{color:var(--muted);font-size:13px;line-height:1.45}
+table{width:100%;max-width:850px;margin:18px auto;border-collapse:collapse;font-size:15px}th,td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--rule)}th{font-weight:700;background:#fafafa}
+.downloads{text-align:center;line-height:2}.scope{font-size:13px;color:var(--muted);max-width:830px}.foot{text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--rule);padding-top:24px;margin-top:64px}
+@media(max-width:700px){main{padding-top:34px}.video-grid{grid-template-columns:1fr}.replay-grid{grid-template-columns:1fr 1fr}.abstract{text-align:left}.links{gap:12px 18px}}@media(max-width:450px){.replay-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><div class="brand">DynamicDex</div><div class="links"><a href="#demos">Demos</a><a href="#method">Method</a><a href="#replays">Tactile replays</a><a href="#real">Real world</a><a href="paper/DynamicDex_ICRA2027_submission.pdf">Paper</a></div></nav></div></header>
 <main>
-<section class="wrap hero"><div><div class="kicker">Anonymous supplementary material · ICRA 2027</div><h1>Contact-aware grasping under hidden load shifts.</h1><p>DynamicDex combines global wrist loading with local tactile history and bounded 16-joint residuals.</p><a class="btn primary" href="#demos">Watch demos ↓</a><a class="btn secondary" href="paper/DynamicDex_ICRA2027_submission.pdf">Read paper</a></div><div><img src="assets/paper/fig1_teaser.png" alt="Hidden payload changes object CoM relative to fixed grasp"></div></section>
-<section class="soft"><div class="wrap"><h2>Key result</h2><p class="lead">The same visible object and total mass can require different finger support when a hidden payload moves.</p><div class="stats"><div class="stat"><strong>100%</strong><span>moving-load success, fixed wrist (90/90)</span></div><div class="stat"><strong>+20 pp</strong><span>over fixed grasp (72/90 → 90/90)</span></div><div class="stat"><strong>≈40%</strong><span>lower normalized squared torque</span></div><div class="stat"><strong>90% / 80%</strong><span>physical Basket static / moving success</span></div></div></div></section>
-<section id="demos"><div class="wrap"><h2>Simulation demos</h2><p class="lead">Four common-Home recordings with direct video controls. The recordings are presentation traces separate from the formal 1,395-trial matrix.</p><div class="demos">
-<div class="card"><video controls muted playsinline preload="metadata" poster="assets/simulation/com_bar.webp"><source src="demos/simulation/com_bar.mp4" type="video/mp4"></video><div class="card-body"><h3>CoM-Bar</h3><p>0.400 kg · payload about ±60 mm · 100% hold retention</p><div class="small-links"><a href="demos/tactile_replays/com_bar.html">Tactile replay ↗</a><a href="data/simulation/trials/com_bar_summary.json">Metrics ↗</a></div></div></div>
-<div class="card"><video controls muted playsinline preload="metadata" poster="assets/simulation/basket.webp"><source src="demos/simulation/basket.mp4" type="video/mp4"></video><div class="card-body"><h3>Basket</h3><p>0.876 kg · payload about ±70 mm · 100% hold retention</p><div class="small-links"><a href="demos/tactile_replays/basket.html">Tactile replay ↗</a><a href="data/simulation/trials/basket_summary.json">Metrics ↗</a></div></div></div>
-<div class="card"><video controls muted playsinline preload="metadata" poster="assets/simulation/drill.webp"><source src="demos/simulation/drill.mp4" type="video/mp4"></video><div class="card-body"><h3>Drill</h3><p>0.975 kg · fixed internal load · 100% hold retention</p><div class="small-links"><a href="demos/tactile_replays/drill.html">Tactile replay ↗</a><a href="data/simulation/trials/drill_summary.json">Metrics ↗</a></div></div></div>
-<div class="card"><video controls muted playsinline preload="metadata" poster="assets/simulation/pan.webp"><source src="demos/simulation/pan.mp4" type="video/mp4"></video><div class="card-body"><h3>Pan</h3><p>0.800 kg · payload about ±50 mm · 78.7% hold retention</p><div class="small-links"><a href="demos/tactile_replays/pan.html">Tactile replay ↗</a><a href="data/simulation/trials/pan_summary.json">Metrics ↗</a></div></div></div>
-</div></div></section>
-<section id="method" class="soft"><div class="wrap method"><img src="assets/paper/fig2_framework.png" alt="DynamicDex method overview"><div><h2>One policy, two sensing scales.</h2><p class="lead">Wrist wrench gives the resultant load. Four local tactile descriptors indicate contact changes. DynamicDex fuses them over an eight-frame history and projects the residual through reference, joint-limit, and rate bounds.</p><ul><li>Global wrist-load encoder</li><li>Shared per-finger tactile encoder</li><li>Recurrent bounded residual actor</li><li>Privileged critic only during training</li></ul></div></div></section>
-<section id="replays"><div class="wrap"><h2>Four-case tactile replays</h2><p class="lead">Every self-contained viewer has a play button and time slider. RGB, four tactile panels, payload/CoM state, phase, and wrench values update packet by packet.</p><div class="replays">
-<div class="replay"><img src="assets/simulation/com_bar.webp" alt="CoM-Bar"><div><h3>CoM-Bar</h3><p>Payload motion and contact history.</p><a href="demos/tactile_replays/com_bar.html">Open replay ↗</a></div></div>
-<div class="replay"><img src="assets/simulation/basket.webp" alt="Basket"><div><h3>Basket</h3><p>Primary-finger support.</p><a href="demos/tactile_replays/basket.html">Open replay ↗</a></div></div>
-<div class="replay"><img src="assets/simulation/drill.webp" alt="Drill"><div><h3>Drill</h3><p>Static contact feedback.</p><a href="demos/tactile_replays/drill.html">Open replay ↗</a></div></div>
-<div class="replay"><img src="assets/simulation/pan_overhead_repair.png" alt="Pan overhead repair"><div><h3>Pan repair</h3><p>Overhead grasp and payload response.</p><a href="demos/tactile_replays/pan.html">Open replay ↗</a></div></div>
-</div><p class="lead">Tactile images are optical marker/deformation overlays, not calibrated force maps.</p></div></section>
-<section id="real" class="soft"><div class="wrap physical"><div><h2>Real-world Basket</h2><p class="lead">DynamicDex Full-16 with wrist admittance: 10 static-load and 5 moving-load trials.</p><table><tr><th>Condition</th><th>Success</th><th>Mean retention</th><th>Mean peak rotation</th></tr><tr><td>Static (N=10)</td><td><b>9/10 · 90%</b></td><td>95.0%</td><td>4.2°</td></tr><tr><td>Moving (N=5)</td><td><b>4/5 · 80%</b></td><td>85.0%</td><td>8.6°</td></tr></table><p class="lead">Independent captures: tool-frame y-axis torque −0.620, −1.054, −1.146 N·m across initial, loaded, and shifted-load states.</p></div><img src="assets/paper/fig6_basket_real.png" alt="Physical Basket tactile and wrist responses"></div></section>
-<section><div class="wrap"><h2>Paper and data</h2><p class="lead">The paper is authoritative for definitions and formal results.</p><div class="downloads"><a class="download" href="paper/DynamicDex_ICRA2027_submission.pdf"><b>Paper PDF</b><span>8-page ICRA submission</span></a><a class="download" href="data/simulation/four_common_home_metrics.csv"><b>Simulation metrics</b><span>Four common-Home traces</span></a><a class="download" href="data/physical/basket_trial_aggregates.csv"><b>Physical aggregate</b><span>15-trial Basket summary</span></a><a class="download" href="data/simulation/pan_overhead_repair.md"><b>Pan repair scope</b><span>Overhead-grasp verification</span></a><a class="download" href="data/release_manifest.json"><b>Release manifest</b><span>SHA-256 hashes</span></a></div></div></section>
-</main><footer><div class="wrap">Anonymous supplementary material · DynamicDex · ICRA 2027</div></footer>
-</body></html>
+<header>
+<h1>DynamicDex: Contact-Aware Dexterous Grasping under Hidden Load Shifts</h1>
+<div class="authors">Anonymous Authors</div>
+<div class="venue">ICRA 2027</div>
+<div class="links"><a href="paper/DynamicDex_ICRA2027_submission.pdf">Paper</a><a href="#video">Video demos</a><a href="#replays">Tactile replays</a><a href="#data">Data</a></div>
+</header>
+
+<img class="teaser" src="assets/paper/fig1_teaser.png" alt="Hidden payload changes the object CoM relative to a fixed grasp">
+
+<p class="abstract"><span class="label">Abstract.</span> Hidden mass redistribution changes the support required from a dexterous grasp even when object geometry and total mass remain unchanged. DynamicDex combines global wrist loading with local tactile history to generate bounded residuals around an established grasp. With a fixed wrist, moving-load pose success increases from 80% to 100% and mean squared normalized joint torque is approximately 40% lower than fixed-grasp control. Physical Basket grasps achieve 90% static-load and 80% moving-load success.</p>
+
+<section>
+<h2>Method Overview</h2>
+<p>DynamicDex encodes wrist wrench and gravity globally, combines four local tactile descriptors with proprioception and role signals, and processes an eight-frame causal history. The actor produces 16 joint residuals that are projected through reference, joint-limit, and rate bounds; privileged object state is used only by the training critic.</p>
+<img class="method-image" src="assets/paper/fig2_framework.png" alt="DynamicDex method overview">
+</section>
+
+<section id="video">
+<h2>Video Demos</h2>
+<p>Four common-Home simulation recordings show approach, closure, payload motion, and hold. These presentation traces are separate from the formal 1,395-trial controller evaluation.</p>
+<div class="video-grid">
+<div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/com_bar.webp"><source src="demos/simulation/com_bar.mp4" type="video/mp4"></video><div class="caption"><b>CoM-Bar</b> · <a href="demos/simulation/com_bar.mp4">MP4</a></div></div>
+<div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/basket.webp"><source src="demos/simulation/basket.mp4" type="video/mp4"></video><div class="caption"><b>Basket</b> · <a href="demos/simulation/basket.mp4">MP4</a></div></div>
+<div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/drill.webp"><source src="demos/simulation/drill.mp4" type="video/mp4"></video><div class="caption"><b>Drill</b> · <a href="demos/simulation/drill.mp4">MP4</a></div></div>
+<div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/pan.webp"><source src="demos/simulation/pan.mp4" type="video/mp4"></video><div class="caption"><b>Pan</b> · <a href="demos/simulation/pan.mp4">MP4</a></div></div>
+</div>
+</section>
+
+<section>
+<h2>Simulation Results</h2>
+<p>DynamicDex reaches 90/90 moving-load successes with a fixed wrist, compared with 72/90 for fixed-grasp control. The 18 additional successes all occur on Basket (30/30 versus 12/30). Admittance-wrist evaluation gives 84/90 successes for DynamicDex versus 75/90 for fixed grasp; Grip-4D also gives 84/90. Contact continuity remains a separate outcome from pose recovery.</p>
+<img class="result-image" src="assets/paper/fig4_measured_diagnostics.png" alt="CoM motion, finger loads, and contact retention during load redistribution">
+</section>
+
+<section id="replays">
+<h2>Four-Case Tactile Replays</h2>
+<p>Each self-contained viewer provides a play button and time slider. RGB, four tactile panels, payload/CoM state, phase, and wrench values update packet by packet. Tactile images are optical marker/deformation overlays, not calibrated force maps.</p>
+<div class="replay-grid">
+<div class="replay"><img src="assets/simulation/com_bar.webp" alt="CoM-Bar"><a href="demos/tactile_replays/com_bar.html">CoM-Bar replay</a><div class="note">payload motion and contact history</div></div>
+<div class="replay"><img src="assets/simulation/basket.webp" alt="Basket"><a href="demos/tactile_replays/basket.html">Basket replay</a><div class="note">primary-finger support</div></div>
+<div class="replay"><img src="assets/simulation/drill.webp" alt="Drill"><a href="demos/tactile_replays/drill.html">Drill replay</a><div class="note">static contact feedback</div></div>
+<div class="replay"><img src="assets/simulation/pan_overhead_repair.png" alt="Pan overhead repair"><a href="demos/tactile_replays/pan.html">Pan repair replay</a><div class="note">overhead grasp and payload response</div></div>
+</div>
+</section>
+
+<section>
+<h2>Real-World Results</h2>
+<p>Physical validation uses DynamicDex Full-16 with wrist admittance on Basket. Contact retention and peak rotation are means of trial-level metrics within each condition.</p>
+<table><tr><th>Condition</th><th>Success</th><th>Mean retention</th><th>Mean peak rotation</th></tr><tr><td>Static load (N=10)</td><td>9/10 (90%)</td><td>95.0%</td><td>4.2°</td></tr><tr><td>Moving load (N=5)</td><td>4/5 (80%)</td><td>85.0%</td><td>8.6°</td></tr></table>
+<img class="physical-image" src="assets/paper/fig6_basket_real.png" alt="Physical Basket tactile and wrist responses">
+</section>
+
+<section id="data">
+<h2>Paper and Data</h2>
+<div class="downloads"><a href="paper/DynamicDex_ICRA2027_submission.pdf">Paper PDF</a> · <a href="data/simulation/four_common_home_metrics.csv">Simulation metrics</a> · <a href="data/physical/basket_trial_aggregates.csv">Physical aggregate</a> · <a href="data/simulation/pan_overhead_repair.md">Pan repair scope</a> · <a href="data/release_manifest.json">Release manifest</a></div>
+<p class="scope">The 15-trial physical aggregate and independent 10-second sensor captures are separate evidence sets. Individual logs for the aggregate were not supplied; the table reports author-confirmed group means.</p>
+</section>
+
+<div class="foot">Anonymous supplementary material · DynamicDex · ICRA 2027</div>
+</main>
+</body>
+</html>
