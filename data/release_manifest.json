@@ -1,0 +1,75 @@
+{
+  "schema": "dynamicdex.supplement_release.v1",
+  "entries": [
+    {
+      "path": "data/physical/README.md",
+      "bytes": 688,
+      "sha256": "7d08e0d28a80f7005b96714b3d4bac4a49c71746e25b224c3450ed21b9362148"
+    },
+    {
+      "path": "data/physical/basket_trial_aggregates.csv",
+      "bytes": 331,
+      "sha256": "0a5577092e23d601896be0a27cbd18a327614ea71b7622f0418f6700ca9f6982"
+    },
+    {
+      "path": "data/physical/sensor_capture_summary.csv",
+      "bytes": 529,
+      "sha256": "98e889468003b20b5594d76ffd5d87fc35a142e2093e9fe46c44adc6b6103dfa"
+    },
+    {
+      "path": "data/simulation/README.md",
+      "bytes": 406,
+      "sha256": "f32adf59e1a7544060391c857232f69ecc8537bb10f63dca2849281aa48af02e"
+    },
+    {
+      "path": "data/simulation/four_common_home_manifest.json",
+      "bytes": 1148,
+      "sha256": "201847d3e7d7802a0cd509b59aa3d3b6b159a4249d8a04ea058002439ea85c4e"
+    },
+    {
+      "path": "data/simulation/four_common_home_metrics.csv",
+      "bytes": 541,
+      "sha256": "d4cb491855ee7dfe5cf383519858e33d97cfdc773fc42c87a4154dfbd3ec8957"
+    },
+    {
+      "path": "data/simulation/trials/basket_summary.json",
+      "bytes": 581,
+      "sha256": "6198ffa23b29ae684ca5d9009c90481690a9be71673ed7509c78b8ba615bb473"
+    },
+    {
+      "path": "data/simulation/trials/basket_trajectory.npz",
+      "bytes": 591723,
+      "sha256": "84b8d1ea20ec2ff69229b3cc0759437cbcf0df719d257574fb822fdf87f9811c"
+    },
+    {
+      "path": "data/simulation/trials/com_bar_summary.json",
+      "bytes": 565,
+      "sha256": "7fd37ed044c82219cd08fd985f2881ba73856295ece0812bdb52735edd583990"
+    },
+    {
+      "path": "data/simulation/trials/com_bar_trajectory.npz",
+      "bytes": 519475,
+      "sha256": "a2daecac834d110a649de73a0c3ea49d6320fd7f2f0caafe9b9664d26671d53e"
+    },
+    {
+      "path": "data/simulation/trials/drill_summary.json",
+      "bytes": 528,
+      "sha256": "75953803553015718e10fe351f1b8fb3489b5c900f25801fecc0d8ac7e951eb5"
+    },
+    {
+      "path": "data/simulation/trials/drill_trajectory.npz",
+      "bytes": 126427,
+      "sha256": "a2833c343387b24ef12fa8f065ba32eca9c2e3d567578f9e974e4d80fca2b948"
+    },
+    {
+      "path": "data/simulation/trials/pan_summary.json",
+      "bytes": 560,
+      "sha256": "5ba17c41fef8a810d721e15f2a7fc2640982f0695e785c4f957de95fcdbe33ae"
+    },
+    {
+      "path": "data/simulation/trials/pan_trajectory.npz",
+      "bytes": 615039,
+      "sha256": "4a9b37680ac5e0b7268c3a457f35b80d267fd0ad0c47d986bb8c5198a75f9ac2"
+    }
+  ]
+}

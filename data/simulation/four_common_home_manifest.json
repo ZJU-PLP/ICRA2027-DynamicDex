@@ -1,0 +1,30 @@
+{
+  "schema": "adaptive_dex.four_workcell_gallery.v1",
+  "source_validation_sha256": "3aa8f609b660b0e70f3c86777be4054de82cab13d0e3194fc665d079e1dc5f47",
+  "cases": {
+    "com_bar": {
+      "summary": "data/simulation/trials/com_bar_summary.json",
+      "trajectory": "data/simulation/trials/com_bar_trajectory.npz",
+      "video": "demos/simulation/com_bar.mp4",
+      "poster": "assets/simulation/com_bar.webp"
+    },
+    "basket": {
+      "summary": "data/simulation/trials/basket_summary.json",
+      "trajectory": "data/simulation/trials/basket_trajectory.npz",
+      "video": "demos/simulation/basket.mp4",
+      "poster": "assets/simulation/basket.webp"
+    },
+    "drill": {
+      "summary": "data/simulation/trials/drill_summary.json",
+      "trajectory": "data/simulation/trials/drill_trajectory.npz",
+      "video": "demos/simulation/drill.mp4",
+      "poster": "assets/simulation/drill.webp"
+    },
+    "pan": {
+      "summary": "data/simulation/trials/pan_summary.json",
+      "trajectory": "data/simulation/trials/pan_trajectory.npz",
+      "video": "demos/simulation/pan.mp4",
+      "poster": "assets/simulation/pan.webp"
+    }
+  }
+}

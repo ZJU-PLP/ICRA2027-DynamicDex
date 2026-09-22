@@ -1,0 +1,5 @@
+capture,window_s,wrist_samples,mean_toolframe_tau_y_Nm,mean_toolframe_tau_z_Nm,marker_reference_note
+initial_grasp,10.0,4999,-0.6195567650083436,-0.2831700628070126,first frame of capture; no hardware zero
+payload_added,10.0,4999,-1.054205730627323,-0.19302564231536543,first frame of capture; no hardware zero
+payload_shifted,10.0,5001,-1.146101375058094,-0.20709679215433796,first frame of capture; no hardware zero
+no_object_reference,10.0,5000,-1.2853182886476413,0.03382169012339788,first frame of capture; no hardware zero

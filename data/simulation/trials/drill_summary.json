@@ -1,0 +1,20 @@
+{
+  "object": "drill",
+  "success": true,
+  "duration_s": 4.500000000000001,
+  "contact_retention_pct": 100.0,
+  "peak_rotation_deg": 1.1027678425062848,
+  "peak_translation_mm": 3.999,
+  "peak_force_n": 18.274110794067383,
+  "observed_hold_samples": 72,
+  "dynamic_recovery_success": null,
+  "static_hold_success": null,
+  "mass_kg": 0.975,
+  "method": "contact_feedback",
+  "physics_hz": 240,
+  "control_hz": 24,
+  "common_home_opening": true,
+  "observation_frame_dim": 123,
+  "history_frames": 8,
+  "slider_range_m": null
+}

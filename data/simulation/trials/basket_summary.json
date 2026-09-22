@@ -1,0 +1,23 @@
+{
+  "object": "basket",
+  "success": true,
+  "duration_s": 16.0,
+  "contact_retention_pct": 100.0,
+  "peak_rotation_deg": 2.2151869059454983,
+  "peak_translation_mm": 6.963,
+  "peak_force_n": 7.9638776779174805,
+  "observed_hold_samples": 348,
+  "dynamic_recovery_success": true,
+  "static_hold_success": true,
+  "mass_kg": 0.8760000000000001,
+  "method": "contact_feedback",
+  "physics_hz": 240,
+  "control_hz": 24,
+  "common_home_opening": true,
+  "observation_frame_dim": 123,
+  "history_frames": 8,
+  "slider_range_m": [
+    -0.07000089594462235,
+    0.07000112471974615
+  ]
+}

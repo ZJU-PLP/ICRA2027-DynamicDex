@@ -1,0 +1,23 @@
+{
+  "object": "com_bar",
+  "success": true,
+  "duration_s": 16.0,
+  "contact_retention_pct": 100.0,
+  "peak_rotation_deg": 1.9796669594616378,
+  "peak_translation_mm": 0.628,
+  "peak_force_n": 4.517138957977295,
+  "observed_hold_samples": 348,
+  "dynamic_recovery_success": true,
+  "static_hold_success": true,
+  "mass_kg": 0.4,
+  "method": "contact_feedback",
+  "physics_hz": 240,
+  "control_hz": 24,
+  "common_home_opening": true,
+  "observation_frame_dim": 123,
+  "history_frames": 8,
+  "slider_range_m": [
+    -0.06000031307012721,
+    0.0599784492785788
+  ]
+}
