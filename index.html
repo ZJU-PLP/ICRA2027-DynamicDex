@@ -37,15 +37,18 @@ table{width:100%;max-width:850px;margin:18px auto;border-collapse:collapse;font-
 </section><section>
 <h2>Simulation Results</h2>
 <p>DynamicDex reaches 90/90 moving-load successes with a fixed wrist, compared with 72/90 for fixed-grasp control. The 18 additional successes all occur on Basket (30/30 versus 12/30). Admittance-wrist evaluation gives 84/90 successes for DynamicDex versus 75/90 for fixed grasp; Grip-4D also gives 84/90. Contact continuity remains a separate outcome from pose recovery.</p>
-<img class="result-image" src="assets/paper/fig3_simulation_grasps.png" alt="Simulation grasp configurations and tactile loads">\n<img class="result-image" src="assets/paper/fig4_measured_diagnostics.png" alt="CoM motion, finger loads, and contact retention during load redistribution">
-\n<h3>Demonstration videos</h3>
+<img class="result-image" src="assets/paper/fig3_simulation_grasps.png" alt="Simulation grasp configurations and tactile loads">
+<img class="result-image" src="assets/paper/fig4_measured_diagnostics.png" alt="CoM motion, finger loads, and contact retention during load redistribution">
+
+<h3>Demonstration videos</h3>
 <p>Four common-Home simulation recordings show approach, closure, payload motion, and hold. These presentation traces are separate from the formal 1,395-trial controller evaluation.</p>
 <div class="video-grid">
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/com_bar.webp"><source src="demos/simulation/com_bar.mp4" type="video/mp4"></video><div class="caption"><b>CoM-Bar</b> · <a href="demos/simulation/com_bar.mp4">MP4</a></div></div>
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/basket.webp"><source src="demos/simulation/basket.mp4" type="video/mp4"></video><div class="caption"><b>Basket</b> · <a href="demos/simulation/basket.mp4">MP4</a></div></div>
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/drill.webp"><source src="demos/simulation/drill.mp4" type="video/mp4"></video><div class="caption"><b>Drill</b> · <a href="demos/simulation/drill.mp4">MP4</a></div></div>
 <div class="video-item"><video controls muted playsinline preload="metadata" poster="assets/simulation/pan.webp"><source src="demos/simulation/pan.mp4" type="video/mp4"></video><div class="caption"><b>Pan</b> · <a href="demos/simulation/pan.mp4">MP4</a></div></div>
-</div>\n</section><section id="replays">
+</div>
+</section><section id="replays">
 <h2>Four-Case Tactile Replays</h2>
 <p>Each self-contained viewer provides a play button and time slider. RGB, four tactile panels, payload/CoM state, phase, and wrench values update packet by packet. Tactile images are optical marker/deformation overlays, not calibrated force maps.</p>
 <div class="replay-grid">
