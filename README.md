@@ -55,10 +55,10 @@ Each self-contained viewer has a play button and time slider. RGB, four tactile 
 
 | Case | Replay |
 | --- | --- |
-| CoM-Bar | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/tactile_replays/com_bar.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/simulation/com_bar.mp4) |
-| Basket | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/tactile_replays/basket.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/simulation/basket.mp4) |
-| Drill | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/tactile_replays/drill.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/simulation/drill.mp4) |
-| Pan | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/tactile_replays/pan.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/file/demos/simulation/pan.mp4) |
+| CoM-Bar | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/tactile_replays/com_bar.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/simulation/com_bar.mp4) |
+| Basket | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/tactile_replays/basket.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/simulation/basket.mp4) |
+| Drill | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/tactile_replays/drill.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/simulation/drill.mp4) |
+| Pan | [Open tactile replay](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/tactile_replays/pan.html) · [MP4](https://anonymous.4open.science/r/ICRA2027-DynamicDex-12D6/demos/simulation/pan.mp4) |
 
 The Pan link above is the regular Pan replay. The separate **Pan non-PPO engineering grasp** is available in [its video](demos/pan_overhead_repair/pan_overhead_repair.mp4), [its packet report](data/simulation/pan_overhead_repair_report.json), and [its scope note](data/simulation/pan_overhead_repair.md).
 
