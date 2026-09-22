@@ -71,6 +71,44 @@
   const phaseName = phase => phase.replace(/_/g, ' ').replace(/^./, c => c.toUpperCase());
   const vector = (values, digits) => '[' + values.map(value => Number(value).toFixed(digits)).join(', ') + ']';
 
+  // Buffer one complete replay on ordinary web pages so repeated backward
+  // seeks do not depend on partial byte-range responses from the video host.
+  // Script-disabled previews and local files keep using the native source.
+  let preparingVideo = /^https?:$/.test(location.protocol);
+  let bufferedUrl = null;
+  video.dataset.bufferedPlayback = preparingVideo ? 'loading' : 'native';
+
+  async function prepareVideo() {
+    if (!preparingVideo) return;
+    const source = video.querySelector('source');
+    try {
+      const response = await fetch(source.src, {signal: AbortSignal.timeout(45000)});
+      if (!response.ok) throw new Error('Replay download failed');
+      const blob = await response.blob();
+      if (!blob.size) throw new Error('Empty replay video');
+      const resumeAt = video.currentTime;
+      const shouldPlay = !video.paused;
+      bufferedUrl = URL.createObjectURL(blob);
+      video.addEventListener('loadedmetadata', () => {
+        video.currentTime = Math.min(resumeAt, Math.max(0, video.duration - 0.01));
+        if (shouldPlay) video.play().catch(() => {});
+        else video.pause();
+        video.dataset.bufferedPlayback = 'ready';
+      }, {once: true});
+      preparingVideo = false;
+      video.src = bufferedUrl;
+      video.load();
+    } catch (error) {
+      preparingVideo = false;
+      video.dataset.bufferedPlayback = 'native';
+      if (video.readyState >= 1) loaded();
+    }
+  }
+  // Retain the buffer if the page enters the back-forward cache.
+  window.addEventListener('pagehide', event => {
+    if (bufferedUrl && !event.persisted) URL.revokeObjectURL(bufferedUrl);
+  });
+
   function show(index) {
     current = Math.max(0, Math.min(data.packets.length - 1, index));
     const packet = data.packets[current];
@@ -102,9 +140,22 @@
   function seek(index) {
     if (!ready) return;
     video.pause();
-    current = Math.max(0, Math.min(data.packets.length - 1, index));
-    video.currentTime = Math.min(data.videoTimes[current], Math.max(0, video.duration - 0.01));
-    show(current);
+    const selected = Math.max(0, Math.min(data.packets.length - 1, index));
+    const target = Math.min(data.videoTimes[selected], Math.max(0, video.duration - 0.01));
+    // Reset an exhausted decoder before seeking back from the final sample.
+    if (video.currentTime >= video.duration - 0.25 && target < video.currentTime) {
+      ready = false;
+      video.addEventListener('loadedmetadata', () => {
+        video.pause();
+        video.currentTime = target;
+        show(selected);
+      }, {once: true});
+      video.load();
+      video.pause();
+    } else {
+      video.currentTime = target;
+    }
+    show(selected);
   }
 
   function sync() {
@@ -132,6 +183,7 @@
   video.addEventListener('timeupdate', sync);
   video.addEventListener('seeked', sync);
   function loaded() {
+    if (preparingVideo) return;
     ready = true;
     inspection.hidden = false;
     status.hidden = true;
@@ -146,6 +198,7 @@
     status.hidden = false;
   });
   if (video.readyState >= 1) loaded();
+  prepareVideo();
 })();
 </script>
 </body>
