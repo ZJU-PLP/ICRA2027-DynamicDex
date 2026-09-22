@@ -1,0 +1,49 @@
+{
+  "measured_slider_range_m": [
+    -0.05000033329607032,
+    0.04991214193502519
+  ],
+  "actual_com_range_m": [
+    [
+      0.04603082581132987,
+      -0.012500088177441597,
+      0.026183774235069672
+    ],
+    [
+      0.04603136585610662,
+      0.01247803063033228,
+      0.026184125403851184
+    ]
+  ],
+  "mass_range_kg": [
+    0.8,
+    0.8
+  ],
+  "max_arm_command_deg": 0.0,
+  "max_measured_arm_rotation_deg": 0.0003440969582523414,
+  "finger_command_range_after_motion_mrad": [
+    0.0,
+    0.0,
+    0.6857567742466486,
+    0.6857567742466486,
+    0.0,
+    0.0,
+    1.02704066783188,
+    1.02704066783188,
+    0.0,
+    0.0,
+    0.2614837512373569,
+    0.2614837512373569,
+    0.0,
+    0.0,
+    0.6436318159104282,
+    0.6436318159103172
+  ],
+  "changed_finger_command_packets": 287,
+  "body_mass_parameters_fixed": true,
+  "source": "actual PhysX rigid-body positions",
+  "controller_mode": "finger_only engineering diagnostic",
+  "moving_stage_reached": true,
+  "wrist_baseline_available": true,
+  "learned_finger_policy": false
+}
