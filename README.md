@@ -51,7 +51,7 @@ The following four recordings begin from the same Home scene. They are presentat
 
 ## Four-Case Tactile Replays
 
-Each self-contained viewer has a play button and time slider. RGB, four tactile panels, payload/CoM state, phase, and wrench values update packet by packet. Tactile images are optical/visible-contact proxy visualizations, not calibrated force maps.
+Each viewer plays the same high-resolution synchronized video on GitHub Pages and in the anonymous repository. The scene, four tactile panels, and contact traces can be paused, scrubbed, and viewed full screen. Optional phase navigation and recorded measurements appear below the player when scripts are enabled. Tactile images are simulated marker/deformation displays, not calibrated force maps.
 
 | Case | Replay |
 | --- | --- |
