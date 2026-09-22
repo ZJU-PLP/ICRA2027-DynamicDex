@@ -63,13 +63,13 @@ Each HTML viewer is self-contained: click the play button or move the time slide
 
 Tactile images are optical marker/deformation visualizations and are not calibrated force maps. The replays are packet-level engineering/presentation records, separate from the learned-policy formal evaluation.
 
-### Pan overhead-grasp repair
+### Pan non-PPO engineering grasp
 
-<img src="assets/simulation/pan_overhead_repair.png" alt="Pan overhead-grasp repair contact replay" width="100%">
+<img src="assets/simulation/pan_overhead_repair.png" alt="Pan non-PPO engineering grasp contact replay" width="100%">
 
-The Pan replay is the verified overhead-handle repair: fixed wrist, finger-load feedback, approximately ±50 mm payload travel, 100% required-contact retention during the hold, 4.57 mm maximum relative translation, and 8.04° maximum rotation. It is a two-run engineering verification, not a learned-policy success-rate estimate.
+The Pan replay is a verified non-PPO engineering grasp: fixed wrist, finger-load feedback, approximately ±50 mm payload travel, 100% required-contact retention during the hold, 4.57 mm maximum relative translation, and 8.04° maximum rotation. It is a two-run engineering verification, not a learned-policy success-rate estimate.
 
-[Pan repair scope and metrics](data/simulation/pan_overhead_repair.md) · [Pan repair video](demos/pan_overhead_repair/pan_overhead_repair.mp4) · [Pan repair packet report](data/simulation/pan_overhead_repair_report.json)
+[Pan non-PPO grasp scope and metrics](data/simulation/pan_overhead_repair.md) · [Pan non-PPO grasp video](demos/pan_overhead_repair/pan_overhead_repair.mp4) · [Pan non-PPO packet report](data/simulation/pan_overhead_repair_report.json)
 
 ## Method and paper evidence
 
@@ -95,7 +95,7 @@ The physical platform uses a UR5e, a 16-joint LEAP hand, four GelSight Mini sens
 
 - [Paper PDF](paper/DynamicDex_ICRA2027_submission.pdf)
 - [Simulation metrics](data/simulation/four_common_home_metrics.csv) · [trajectory summaries](data/simulation/trials/) · [release manifest](data/release_manifest.json)
-- [Pan repair report](data/simulation/pan_overhead_repair_report.json) · [Pan replay scope](data/simulation/pan_overhead_repair.md)
+- [Pan non-PPO report](data/simulation/pan_overhead_repair_report.json) · [Pan replay scope](data/simulation/pan_overhead_repair.md)
 - [Physical 15-trial aggregate](data/physical/basket_trial_aggregates.csv)
 - [Independent sensor-capture summary](data/physical/sensor_capture_summary.csv)
 
