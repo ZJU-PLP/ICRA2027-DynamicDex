@@ -9,7 +9,7 @@
 &nbsp; · &nbsp;
 <a href="#simulation-demos">Simulation demos</a>
 &nbsp; · &nbsp;
-<a href="#pan-tactile-replay">Pan tactile replay</a>
+<a href="#replays">Tactile replays</a>
 &nbsp; · &nbsp;
 <a href="#real-world">Real-world result</a>
 </p>
